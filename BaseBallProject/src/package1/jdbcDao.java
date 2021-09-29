@@ -29,7 +29,7 @@ public class jdbcDao {
 			e.printStackTrace();
 		}
 	}
-
+cc
 	private void close() {
 		try {
 			if (rs != null) {

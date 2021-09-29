@@ -88,6 +88,30 @@ public class jdbcDao {
 		return info;
 	}
 	
+	public playerVO select(playerVO vo) {
+		playerVO info = null; // 로그인실패하면 널, 성공하면 새로운 객체생성
+		getConn();
+		try {
+			String sql = "select * from bbplayer where pl_name = ? and pl_position = ? and pl_capa";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getName());
+			psmt.setString(2, vo.getPosition());
+			psmt.setInt(3, vo.getCapa());
+			rs = psmt.executeQuery(); // select 실행시 필요한 키워드
+			if (rs.next()) { // 커서 이동시 성공 RS개념이 이해가 안된다
+				String name = rs.getString(1); // 컬럼 위치가 기억안나면 "id" 컬럼명사용 가능
+				String position = rs.getString("pl_position");
+				int capa = rs.getInt("pl_capa");
+				info = new playerVO(name, capa, position);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace(); // 에러시 빨간글씨 나오는거 ->없으면 안뜬다 넣자
+		} finally {
+			close();
+		}
+		return info;
+	} 
+	
 	
 	
 	

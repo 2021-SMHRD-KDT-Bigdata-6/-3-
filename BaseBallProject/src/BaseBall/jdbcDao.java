@@ -1,4 +1,4 @@
-package package1;
+package BaseBall;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -44,7 +44,7 @@ public class jdbcDao {
 		}
 	}
 	
-	public int register(UserVO vo) {
+	public int register(userVO vo) {
 		int cnt = 0;
 		getConn();
 		try {
@@ -64,10 +64,10 @@ public class jdbcDao {
 			close();
 		}
 		return cnt;
-	}
+	} 
 	
-	public UserVO login(UserVO vo) {
-		UserVO info = null; // 로그인실패하면 널, 성공하면 새로운 객체생성
+	public userVO login(userVO vo) {
+		userVO info = null; // 로그인실패하면 널, 성공하면 새로운 객체생성
 		getConn();
 		try {
 			String sql = "select * from bbuser where user_id = ? and user_pw = ?";
@@ -78,7 +78,7 @@ public class jdbcDao {
 			if (rs.next()) { // 커서 이동시 성공 RS개념이 이해가 안된다
 				String id = rs.getString(1); // 컬럼 위치가 기억안나면 "id" 컬럼명사용 가능
 				String pw = rs.getString("pw");
-				info = new UserVO(id, pw);
+				info = new userVO(id, pw);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace(); // 에러시 빨간글씨 나오는거 ->없으면 안뜬다 넣자

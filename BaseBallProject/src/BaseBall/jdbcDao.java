@@ -77,7 +77,7 @@ public class jdbcDao {
 			rs = psmt.executeQuery(); // select 실행시 필요한 키워드
 			if (rs.next()) { // 커서 이동시 성공 RS개념이 이해가 안된다
 				String id = rs.getString(1); // 컬럼 위치가 기억안나면 "id" 컬럼명사용 가능
-				String pw = rs.getString("pw");
+				String pw = rs.getString("user_pw");
 				info = new userVO(id, pw);
 			}
 		} catch (SQLException e) {

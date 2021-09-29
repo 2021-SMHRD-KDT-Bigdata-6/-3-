@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public class jdbcDao {
 
 	private Connection conn = null;
@@ -43,7 +42,7 @@ public class jdbcDao {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public int register(userVO vo) {
 		int cnt = 0;
 		getConn();
@@ -55,17 +54,17 @@ public class jdbcDao {
 			}
 			String sql = "insert into bbuser values(?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getId()); 
+			psmt.setString(1, vo.getId());
 			psmt.setString(2, vo.getPw());
-			cnt = psmt.executeUpdate(); 
+			cnt = psmt.executeUpdate();
 		} catch (SQLException e) { // SQL에서 오류뜰수 있으니까 요건 냅둬
 			e.printStackTrace(); // 에러시 빨간글씨 나오는거 ->없으면 안뜬다 넣자
 		} finally {
 			close();
 		}
 		return cnt;
-	} 
-	
+	}
+
 	public userVO login(userVO vo) {
 		userVO info = null; // 로그인실패하면 널, 성공하면 새로운 객체생성
 		getConn();
@@ -87,11 +86,6 @@ public class jdbcDao {
 		}
 		return info;
 	}
-	
-	
-	
-	
-	
-	
+
 
 }

@@ -122,7 +122,7 @@ public class View {
 							//list.getName(4)? 뭔진몰라
 						}
 						
-						//상대 투수 랜덤으로 1명 불러오기
+						//상대 투수 랜덤으로 1명 불러오기함
 						//ig_103 select2
 						
  						

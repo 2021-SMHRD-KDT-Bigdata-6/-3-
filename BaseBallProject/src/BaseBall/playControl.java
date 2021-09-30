@@ -4,38 +4,60 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class playControl {
+	ArrayList<playerVO> list = new ArrayList<playerVO>();
 	jdbcDao dao = new jdbcDao();
 	Random ran = new Random();
-	
-	//로직
-	//0) 회원가입 로그인을 dao에서 했네
-	//1. 선수 추출 IG_102 //진행중
-	//2. 사용자 점수 변경 (IG_104) //정현
-	//3. 선수 추가 추출 (IG_105) //정현
-	
-	//1-1)선수 뽑기 DB에 저장된 타자 5명을 랜덤으로 추출.
-	//dao에 있음
-	//ig_100 ,103,105
-	
-	//1-2)상대 타자 랜덤 추출 ig_103
-	//a) dao에서 select로 받아오게되면? 타자가 다 오게되니까 배열에 담아.
-	//b) usercontrol에서 dao에서 담은배열에서 랜덤으로 한개를 추출한 데이터를 리턴으로 보내.
-	
-	
-	
-	//	select * from bbplayer where pl_name = ? and pl_position = ? and pl_capa = ? and rownum <= 5 and pl_position = '타자' order by DBMS_random.value
-	
-	public ArrayList<playerVO> select2() {
-		ArrayList<playerVO> list = dao.select2();
-		ArrayList<playerVO> resultlist = new ArrayList<playerVO>();		
-		
-		int num = ran.nextInt(list.size());
-		playerVO vo = list.get(num);
-		resultlist.add(vo);
-		
-		return resultlist;
+	ArrayList<playerVO> resultList = new ArrayList<playerVO>();
+
+	public ArrayList<playerVO> select() { // 5명 타자 추출
+
+		// 전체 선수 리스트
+		list = dao.select();
+		// 되돌려줄 선수 리스트
+
+		for (int i = 0; i < 5; i++) {
+			int cho = ran.nextInt(list.size());
+
+			playerVO vo = list.get(cho);
+			resultList.add(vo);
+			list.remove(cho); // 랜덤으로 뽑힌 선수 인덱스를 제거
+			for (int j = 0; j < i; j++) {
+				if (resultList.get(j) == resultList.get(i)) {
+					i--;
+					break;
+				}
+			}
+		}
+		return resultList;
 	}
-	
-	
-	
-}	
+
+	public ArrayList<playerVO> select2() { // 투수 1명 추출
+		ArrayList<playerVO> pitList = dao.select2();
+		ArrayList<playerVO> pitresultlist = new ArrayList<playerVO>();
+
+		int num = ran.nextInt(pitList.size());
+		playerVO vo = pitList.get(num);
+		pitresultlist.add(vo);
+
+		return pitresultlist;
+	}
+
+	public playerVO select3() { // 타자 1명 추출 (중복 5명 제거 후)
+		ArrayList<playerVO> hitList = dao.select3(); // 
+		for (int i = 0; i < list.size(); i++) {
+			for (int j = 0; j < resultList.size(); j++) {
+				if (resultList.get(j) == list.get(i)) {
+					// 제거 remove
+					list.remove(i);
+				}
+			}
+		}
+
+		int num1 = ran.nextInt(list.size());
+		playerVO vo = list.get(num1);
+		hitList.add(vo);
+		// 추출 1명
+		return vo;
+	}
+
+}

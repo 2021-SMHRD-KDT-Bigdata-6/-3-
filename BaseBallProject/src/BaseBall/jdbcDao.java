@@ -126,6 +126,21 @@ public class jdbcDao {
 		}
 		return list;
 	} 
+	//IG_103 상대 투수 랜덤추출
+	public playerVO select2(playerVO pvo) {
+		return pvo;
+		
+	}
+	//IG_104 
+	public int comparing(int a, int b) {
+		return a;
+	}
+	
+	//IG_105 선수추가추출
+	
+	public playerVO select3(playerVO pvo) {
+		return pvo;
+	}
 	
 	
 	

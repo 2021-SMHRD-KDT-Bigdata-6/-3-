@@ -11,7 +11,7 @@ public class View {
 		Scanner sc = new Scanner(System.in);
 		jdbcDao dao = new jdbcDao();
 
-		// 1.로그인, 회원가입, 종료
+		// 1.로그인, 회원가입, 종료 [메인]
 		boolean toggle = true;
 		while (toggle) {
 			System.out.print("[1] 로그인 [2] 회원가입 [3] 종료 >> ");
@@ -31,23 +31,23 @@ public class View {
 					System.out.println("로그인 성공 :-) ");
 
 					System.out.println("[1] 선수뽑기 [2] 게임시작 >> "); // 저장된 정보를 읽고 버튼 구성
-					int dom = sc.nextInt();
+					int dom = sc.nextInt(); 
 
 					if (dom == 1) { // 로그인 후 "선수 뽑기" 버튼으로 랜덤 5명 타자 정보 불러오기(이름, 능력치)
-									// 버튼 다시 출력해서 게임 시작!
-					
-						
+									// 버튼 다시 출력해서 게임 시작! //IG_100,101 =>DAO.SELECT
+
 						ArrayList<playerVO> list = new ArrayList<>();
-						
-						//playerVO vo2 = new playerVO(name, capa, position);
+
+						// playerVO vo2 = new playerVO(name, capa, position);
 
 						list = dao.select();
 						int index = ran.nextInt();
-						
-					for(int i = 0; i < 5; i++) {
-						ArrayList<playerVO> list2 = new ArrayList<>();
-						list2.add(list.get(index));
-					}
+
+						for (int i = 0; i < 5; i++) {
+							ArrayList<playerVO> list2 = new ArrayList<>();
+							list2.add(list.get(index));
+						}
+						//1 다시 선수뽑기로 돌아가야함
 						
 					}
 
@@ -79,6 +79,38 @@ public class View {
 		}
 
 		// 3. 게임플레이 및 결과
+		//-> 게임시작누르고 타자 선택
+		//IG_102 선수선택
+		//System.out.println("===vs===");
+		// IG_103 상대 투수 랜덤추출
+		//slect2();
+		
+		
+		// while(스트라이크 3회 미만 or 점수 10점 미만) {
+		//IG_104 호출
+		//	[ IG_104 안에 (타자-투수) 계산 -> 결과에 따라 return 0,1,2를 해서 사용자 점수 누적 (비교!)] 
+		// 	스트라이크 회수 세기
+		// 	RETURN 값 점수에 받기 }
+		
+		// 승리해서 WHILE문 탈출하면 -> 승수 카운트++; 
+		// 카운트 2에 도달하면 ( 선수 뽑기 1회씩 증가 (누적) + 카운트 다시 0으로 )
+		
+		// 선수 다시 추출 IG_105
+		
+		//게임반복?
+		
+		
+		
+		//
+		
+		
+		
+		
+		
+		//
+		
+		
+		
 		// 4. 선수 추가 등록
 
 	}

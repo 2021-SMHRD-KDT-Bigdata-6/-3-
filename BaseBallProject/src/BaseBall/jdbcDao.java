@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
-
 public class jdbcDao {
 
 	private Connection conn = null;
@@ -91,63 +89,42 @@ public class jdbcDao {
 	}
 
 	
-	public ArrayList<playerVO> select() {
+//ig_102들어가야함
+	
+	
+	
+	// IG_103 상대 투수 랜덤추출
+
+	public ArrayList<playerVO> select2() {
 		ArrayList<playerVO> list = new ArrayList<playerVO>();
-		 // 로그인실패하면 널, 성공하면 새로운 객체생성
 		getConn();
+		String sql = "select * from bbplayer where pl_position = '투수' ";
 		try {
-			//String sql = "select * from bbplayer where pl_name = ? and pl_position = ? and pl_capa = ? and rownum <= 5 and pl_position = '타자' order by DBMS_random.value ";
-			String sql = "select * from bbplayer";
 			psmt = conn.prepareStatement(sql);
-//			psmt.setString(1, vo.getName());
-//			psmt.setString(2, vo.getPosition());
-//			psmt.setInt(3, vo.getCapa());
-			rs = psmt.executeQuery(); // select 실행시 필요한 키워드
-			while(rs.next()) {
+			rs = psmt.executeQuery();
+			while (rs.next()) {
 				String name = rs.getString(1);
-				int capa = rs.getInt(2);
-				String position = rs.getString(3);
-				playerVO info = new playerVO(name, capa, position);
-				list.add(info);
+				String position = rs.getString(2);
+				int capa = rs.getInt(3);
+				playerVO vo = new playerVO(name, capa, position);
+				list.add(vo);
 			}
-//			if (rs.next()) { // 커서 이동시 성공 RS개념이 이해가 안된다
-//				
-//				
-//				
-//				String name = rs.getString(1); // 컬럼 위치가 기억안나면 "id" 컬럼명사용 가능
-//				String position = rs.getString("pl_position");
-//				int capa = rs.getInt("pl_capa");
-//				info = new playerVO(name, capa, position);
-//			}
 		} catch (SQLException e) {
-			e.printStackTrace(); // 에러시 빨간글씨 나오는거 ->없으면 안뜬다 넣자
-		} finally {
-			close();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return list;
-	} 
-	//IG_103 상대 투수 랜덤추출
-	public playerVO select2(playerVO pvo) {
-		return pvo;
-		
 	}
-	//IG_104 
+
+	// IG_104
 	public int comparing(int a, int b) {
 		return a;
 	}
-	
-	//IG_105 선수추가추출
-	
+
+	// IG_105 선수추가추출
+
 	public playerVO select3(playerVO pvo) {
 		return pvo;
 	}
-	
-	
-	
-	
-	
-	
-
-
 
 }

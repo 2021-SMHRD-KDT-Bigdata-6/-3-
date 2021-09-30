@@ -10,19 +10,21 @@ public class View {
 		Random ran = new Random();
 		Scanner sc = new Scanner(System.in);
 		jdbcDao dao = new jdbcDao();
+		playControl play = new playControl();
 
 		// 1.로그인, 회원가입, 종료 [메인]
 		boolean toggle = true;
 		while (toggle) {
 			System.out.print("[1] 로그인 [2] 회원가입 [3] 종료 >> ");
 			int choice = sc.nextInt();
-
+			System.out.println(play.select2());
 			if (choice == 1) {
 				System.out.println("===로그인===");
 				System.out.print("ID입력: ");
 				String id = sc.next();
 				System.out.println("PW입력: ");
 				String pw = sc.next();
+				
 
 				userVO vo = new userVO(id, pw);
 				userVO info = dao.login(vo);
@@ -37,16 +39,14 @@ public class View {
 									// 버튼 다시 출력해서 게임 시작! //IG_100,101 =>DAO.SELECT
 
 						ArrayList<playerVO> list = new ArrayList<>();
-
+						list = play.select2();
+						
+						System.out.println(list.get(0).getName());
+						System.out.println(list.get(0).getPosition());
+						System.out.println(list.get(0).getCapa());
 						// playerVO vo2 = new playerVO(name, capa, position);
 
-						list = dao.select();
-						int index = ran.nextInt();
-
-						for (int i = 0; i < 5; i++) {
-							ArrayList<playerVO> list2 = new ArrayList<>();
-							list2.add(list.get(index));
-						}
+						
 						//1 다시 선수뽑기로 돌아가야함
 						
 					}

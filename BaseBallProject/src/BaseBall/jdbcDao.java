@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-6/ROORIPIRATES.git
 
 public class jdbcDao {
 
@@ -81,6 +84,33 @@ public class jdbcDao {
 				info = new userVO(id, pw);
 			}
 		} catch (SQLException e) {
+<<<<<<< HEAD
+=======
+			e.printStackTrace(); 
+		} finally {
+			close();
+		}
+		return info;
+	}
+
+
+	
+	public ArrayList<playerVO> select() { // 타자 5명 랜덤뽑기 메소드
+		ArrayList<playerVO> list = new ArrayList<playerVO>();
+		getConn();
+		try {
+			String sql = "select * from bbplayer where pl_position = '타자' ";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				String name = rs.getString(1);
+				String position = rs.getString(2);
+				int capa = rs.getInt(3);
+				playerVO vo = new playerVO(name, capa, position);
+				list.add(vo);
+			}
+		} catch (SQLException e) {
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-6/ROORIPIRATES.git
 			e.printStackTrace(); // 에러시 빨간글씨 나오는거 ->없으면 안뜬다 넣자
 		} finally {
 			close();
@@ -126,5 +156,11 @@ public class jdbcDao {
 	public playerVO select3(playerVO pvo) {
 		return pvo;
 	}
+<<<<<<< HEAD
+=======
+	
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-6/ROORIPIRATES.git
+
 
 }

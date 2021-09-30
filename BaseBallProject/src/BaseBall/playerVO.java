@@ -6,6 +6,7 @@ public class playerVO {
 	private String name;
 	private int capa;
 	private String position;
+	
 	public playerVO(String name, int capa, String position) {
 		super();
 		this.name = name;

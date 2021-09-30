@@ -35,7 +35,7 @@ public class View {
 					if (dom == 1) { // 로그인 후 "선수 뽑기" 버튼으로 랜덤 5명 타자 정보 불러오기(이름, 능력치)
 									// 버튼 다시 출력해서 게임 시작!
 						ArrayList<playerVO> mm = new ArrayList<>();
-
+						
 					}
 
 					System.out.print("[1] 선수뽑기 [2] 게임시작 >> "); // 저장된 정보를 읽고 버튼 구성
@@ -72,7 +72,9 @@ public class View {
 				break;
 			}
 		}
-
+		 
+		
+		
 		// 3. 게임플레이 및 결과
 		// 4. 선수 추가 등록
 

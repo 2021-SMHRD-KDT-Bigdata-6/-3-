@@ -166,5 +166,8 @@ public class jdbcDao {
 		return list;
 	}
 	
+	//userdataÃß°¡
+	
+	
 	
 }	

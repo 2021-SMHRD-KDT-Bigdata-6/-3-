@@ -10,7 +10,7 @@ public class playControl {
 	ArrayList<playerVO> resultList = new ArrayList<playerVO>();
 
 	public ArrayList<playerVO> select() { // 5명 타자 추출
-
+		
 		// 전체 선수 리스트
 		list = dao.select();
 		// 되돌려줄 선수 리스트

@@ -25,7 +25,6 @@ public class View {
 		// 1.로그인, 회원가입, 종료 [메인]
 		System.out.println(" ====== 히어로 야구게임 ====== ");
 		
-		System.out.println("");
 		boolean toggle = true;
 		while (toggle) {
 			System.out.print("[1] 로그인 [2] 회원가입 [3] 종료 >> ");

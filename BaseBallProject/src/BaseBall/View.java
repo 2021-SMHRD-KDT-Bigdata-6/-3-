@@ -16,19 +16,39 @@ public class View {
 		ArrayList<playerVO> list = new ArrayList<playerVO>();
 		ArrayList<playerVO> list2 = new ArrayList<playerVO>();
 
-		// 1.�α���, ȸ������, ���� [����]
-		System.out.println(" ====== ����� �߱����� ====== ");
-
+		// 1.로그인, 회원가입, 종료 [메인]
+		System.out.println(" ====== 히어로 야구게임 ====== ");
+		System.out.println(".​⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣤⣤⣤⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠛⠉⠙⠛⠛⠛⠛⠻⢿⣿⣷⣤⡀⠀⠀⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠋⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠈⢻⣿⣿⡄⠀⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⣸⣿⡏⠀⠀⠀⣠⣶⣾⣿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣄⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⣿⣿⠁⠀⠀⢰⣿⣿⣯⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣷⡄⠀\r\n"
+				+ "⠀⠀⣀⣤⣴⣶⣶⣿⡟⠀⠀⠀⢸⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⠀\r\n"
+				+ "⠀⢰⣿⡟⠋⠉⣹⣿⡇⠀⠀⠀⠘⣿⣿⣿⣿⣷⣦⣤⣤⣤⣶⣶⣶⣶⣿⣿⣿⠀\r\n"
+				+ "⠀⢸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀\r\n"
+				+ "⠀⣸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠉⠻⠿⣿⣿⣿⣿⡿⠿⠿⠛⢻⣿⡇⠀⠀\r\n"
+				+ "⠀⣿⣿⠁⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣧⠀⠀\r\n"
+				+ "⠀⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀\r\n"
+				+ "⠀⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀\r\n"
+				+ "⠀⢿⣿⡆⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀\r\n"
+				+ "⠀⠸⣿⣧⡀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠃⠀⠀\r\n"
+				+ "⠀⠀⠛⢿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⣰⣿⣿⣷⣶⣶⣶⣶⠶⠀⢠⣿⣿⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⣽⣿⡏⠁⠀⠀⢸⣿⡇⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⢹⣿⡆⠀⠀⠀⣸⣿⠇⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⢿⣿⣦⣄⣀⣠⣴⣿⣿⠁⠀⠈⠻⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀\r\n"
+				+ "⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀\r\n"
+				+ "");
+	
 		boolean toggle = true;
 		while (toggle) {
-			System.out.print("[1] �α��� [2] ȸ������ [3] ���� >> ");
+			System.out.print("[1] 로그인 [2] 회원가입 [3] 종료 >> ");
 			int choice = sc.nextInt();
 
 			if (choice == 1) {
-				System.out.println(" === �α��� === ");
-				System.out.print("ID�Է�: ");
+				System.out.println(" === 로그인 === ");
+				System.out.print("ID입력: ");
 				String id = sc.next();
-				System.out.print("PW�Է�: ");
+				System.out.print("PW입력: ");
 				String pw = sc.next();
 
 //				userVO vo = new userVO(id, pw);
@@ -37,30 +57,30 @@ public class View {
 				userVO info = dao.login(uvo);
 
 				if (info != null) {
-					System.out.println("�α��� ���� :-) ");
+					System.out.println("로그인 성공 :-) ");
 					break;
 
 				} else {
-					System.out.println("�α��� ���� :-<");
+					System.out.println("로그인 실패 :-<");
 				}
 			} else if (choice == 2) {
-				System.out.println(" === ȸ������ === ");
-				System.out.print("ID�Է�: ");
+				System.out.println(" === 회원가입 === ");
+				System.out.print("ID입력: ");
 				String id = sc.next();
-				System.out.print("PW�Է�: ");
+				System.out.print("PW입력: ");
 				String pw = sc.next();
 				uvo.setId(id);
 				uvo.setPw(pw);
 				int cnt = dao.register(uvo);
 
 				if (cnt > 0) {
-					System.out.println("= ȸ������ ����^_^ =");
+					System.out.println("= 회원가입 성공^_^ =");
 
 				} else {
-					System.out.println("= ȸ������ ����^_^ =");
+					System.out.println("= 회원가입 실패^_^ =");
 				}
 			} else if (choice == 3) {
-				System.out.println("= ���α׷��� �����մϴ� ^3^ =");
+				System.out.println("= 프로그램을 종료합니다  =");
 				sc.close();
 				toggle = false;
 				break;
@@ -71,17 +91,17 @@ public class View {
 			int ingameStrike = 0;
 			int ingameScore = 0;
 
-			System.out.print("[1] �����̱� [2] ���ӽ��� >> "); // ����� ������ �а� ��ư ����
+			System.out.print("[1] 선수뽑기 [2] 게임시작 >> "); // 저장된 정보를 읽고 버튼 구성
 			int dom = sc.nextInt();
 			System.out.println();
 
-			System.out.println("==== �̱� Ƚ�� : " + choose + " ====");
+			System.out.println("==== 뽑기 횟수 : " + choose + " ====");
 
 //			if (choose == 0) {
-//				System.out.println("��ȸ����");
-			if (dom == 1) { // �α��� �� "���� �̱�" ��ư���� ���� 5�� Ÿ�� ���� �ҷ�����(�̸�, �ɷ�ġ)
+//				System.out.println("기회없다");
+			if (dom == 1) { // 로그인 후 "선수 뽑기" 버튼으로 랜덤 5명 타자 정보 불러오기(이름, 능력치)
 				if (choose == 0) {
-					System.out.println("....�̱� Ƚ���� �����ϴ�! T-T");
+					System.out.println("....뽑기 횟수가 없습니다! T-T");
 				} else {
 					if (uvo.getStreakCount() > 0) {
 						playerVO vo = play.select3();
@@ -99,13 +119,13 @@ public class View {
 							System.out.println();
 						}
 					}
-					choose--;// ++ �� �̰����� !!!
+					choose--;// ++ 는 이겼을때 !!!
 					System.out.println();
 				}
 			}
-			else if (dom == 2) { // ���� ��� �����ֱ� - ������ �߿� ���� ���� ��� - ���� ����
+			else if (dom == 2) { // 선수 목록 보여주기 - 선수들 중에 투수 랜덤 출력 - 게임 시작
 				do {
-					System.out.println("==== ���ӽ��� ====");
+					System.out.println("==== 게임시작 ====");
 
 					System.out.println();
 
@@ -116,10 +136,10 @@ public class View {
 						System.out.println();
 					}
 					System.out.println();
-					System.out.print("�������� : ");
+					System.out.print("선수선택 : ");
 					int listIndex = sc.nextInt();
 					int real = 1;
-					System.out.println("[  Ÿ��  ]");
+					System.out.println("[  타자  ]");
 					for (int i = 0; i < list.size(); i++) {
 						if (listIndex == i + 1) {
 							System.out.print(list.get(i).getName() + " ");
@@ -129,33 +149,54 @@ public class View {
 
 					}
 
-					// ��� ���� �������� 1�� �ҷ�������
+					// 상대 투수 랜덤으로 1명 불러오기함
 					System.out.println("     VS  ");
 					list2 = play.select2();
-					System.out.println("[  ����  ]");
+					System.out.println("[  투수  ]");
 					System.out.print(list2.get(0).getName());
 					System.out.print(" || ");
 					System.out.println(list2.get(0).getCapa());
 
 					int diff = list.get(listIndex - 1).getCapa() - list2.get(0).getCapa();
 					if (diff <= 10) {
-						System.out.println("!! ��Ʈ����ũ !!");
+						System.out.println("!! 스트라이크 !!");
 						ingameStrike++;
 					} else if (diff > 10 && diff <= 50) {
-						System.out.println("!! ��Ÿ !!");
+						System.out.println("!! 안타 !!");
 						ingameScore++;
 					} else if (diff >= 50) {
-						System.out.println("!! Ȩ�� !!");
+						System.out.println("!! 홈런 !!");
 						ingameScore += 2;
 					}
-					System.out.println("***������*** >> " + ingameStrike + "��Ʈ����ũ // " + ingameScore + "�� \n");
+					System.out.println("***전광판*** >> " + ingameStrike + "스트라이크 // " + ingameScore + "점 \n");
 				} while (ingameStrike < 3 && ingameScore < 10);
 
 				if (ingameScore >= 10) {
 					uvo.setStreakCount(uvo.getStreakCount() + 1);
-					System.out.println(uvo.getStreakCount() + "����!!"); // �߰��� �а� �� ��쿡 ���� code �����ϱ�
+					System.out.println("[    "+ uvo.getStreakCount() + "연승!!   축하해요~! ]"); // 중간에 패가 낄 경우에 대한 code 구현하기
+					System.out.println("/ )))　　 ＿\r\n"
+							+ "／ イ 　　　((( ヽ\r\n"
+							+ "(　 ﾉ　　　　 ￣Ｙ＼\r\n"
+							+ "|　(＼　∧＿∧　 /　)\r\n"
+							+ "ヽ　ヽ ( ͡° ͜ʖ ͡°) ／ ﾉ /\r\n"
+							+ "　＼ |　⌒Ｙ⌒　/ /\r\n"
+							+ "　 ｜ヽ　 ｜　 ﾉ /\r\n"
+							+ "　 ＼ ト--仝--イ /\r\n"
+							+ "　　 \\ ミ土彡 /\r\n"
+							+ "　　　)　　　(\r\n"
+							+ "　 　 /　 ???? \\\r\n"
+							+ "");
 				} else if (ingameStrike == 3) {
-					System.out.println("GAME OUT!!!");
+					System.out.println("[   GAME OUT!!!   ]");
+					System.out.println(""
+							+ ".　　　_＿＿＿_\r\n"
+							+ "　　／　　　　＼　\r\n"
+							+ "　／　  _ノ 　ヽ_＼\r\n"
+							+ " ／   　（●）（●）＼\r\n"
+							+ " |　    ///（_人_）///| 참내..\r\n"
+							+ " ＼   　　　 　　    ／\r\n"
+							+ "／　 　　　 　    　＼\r\n"
+							+ "");
 				}
 
 				int l = uvo.getStreakCount();
@@ -164,10 +205,10 @@ public class View {
 				}
 
 				System.out.println();
-				System.out.print("[1] ��� ���, [2] ���� >> ");
+				System.out.print("[1] 경기 계속, [2] 종료 >> ");
 				int answer = sc.nextInt();
 				if (answer == 1) {
-					// �����̱� ������ �ѹ��� �����°ɷ� 105
+					// 선수뽑기 로직이 한번만 뽑히는걸로 105
 //					choose++;
 				} else if (answer == 2) {
 					System.out.println("===== The End =====");
